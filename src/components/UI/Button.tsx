@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
 /** styles */
-const StyledButton = styled.button`
+const View = styled.button`
   width: 100%;
   font: inherit;
   padding: 0.5rem 1.5rem;
@@ -11,7 +11,6 @@ const StyledButton = styled.button`
   background: #8b005d;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
   cursor: pointer;
-  margin-top: 1rem;
 
   @media (min-width: 768px) {
     width: auto;
@@ -36,7 +35,7 @@ const Button = (props: {
   onClick?: Function;
 }) => {
   return (
-    <StyledButton
+    <View
       type={props.type}
       className='button'
       onClick={() => {
@@ -44,7 +43,7 @@ const Button = (props: {
       }}
     >
       {props.children}
-    </StyledButton>
+    </View>
   );
 };
 

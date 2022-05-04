@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import ICourseGoal from '../../../model/ICourseGoal';
+import ITodo from '../../model/ITodo';
 
 /** styles */
-const Item = styled.li`
+const View = styled.li`
   margin: 1rem 0;
   background: #8b005d;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -13,15 +13,11 @@ const Item = styled.li`
 `;
 
 /** component */
-const CourseGoalItem = (props: { item: ICourseGoal; onClick: Function }) => {
+const TodoItem = (props: { item: ITodo; onClick: Function }) => {
   const deleteItemHandler = () => {
     props.onClick(props.item.id);
   };
-  return (
-    <Item className='goal-item' onClick={deleteItemHandler}>
-      {props.item.title}
-    </Item>
-  );
+  return <View onClick={deleteItemHandler}>{props.item.title}</View>;
 };
 
-export default CourseGoalItem;
+export default TodoItem;
