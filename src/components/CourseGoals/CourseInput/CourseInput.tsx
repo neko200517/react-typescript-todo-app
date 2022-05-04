@@ -1,9 +1,8 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import styled from 'styled-components';
-
 import Button from '../../UI/Button';
-// import './CourseInput.css';
 
+/** styles */
 type FormControlProps = {
   invalid: boolean;
 };
@@ -37,6 +36,7 @@ const FormControl = styled.div`
   }
 `;
 
+/** component */
 const CourseInput = (props: { onRegist: Function }) => {
   const [text, setText] = useState('');
   const [isValid, setIsValid] = useState(true);
