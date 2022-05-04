@@ -1,24 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
-const Button = (props: {
-  children: ReactNode;
-  type: 'button' | 'submit' | 'reset' | undefined;
-  onClick?: Function;
-}) => {
-  return (
-    <StyledButton
-      type={props.type}
-      className='button'
-      onClick={() => {
-        if (props.onClick) props.onClick();
-      }}
-    >
-      {props.children}
-    </StyledButton>
-  );
-};
-
+/** styles */
 const StyledButton = styled.button`
   width: 100%;
   font: inherit;
@@ -45,5 +28,24 @@ const StyledButton = styled.button`
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
   }
 `;
+
+/** component */
+const Button = (props: {
+  children: ReactNode;
+  type: 'button' | 'submit' | 'reset' | undefined;
+  onClick?: Function;
+}) => {
+  return (
+    <StyledButton
+      type={props.type}
+      className='button'
+      onClick={() => {
+        if (props.onClick) props.onClick();
+      }}
+    >
+      {props.children}
+    </StyledButton>
+  );
+};
 
 export default Button;
